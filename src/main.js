@@ -5,9 +5,11 @@ import store from './store'
 import VueRx from 'vue-rx'
 import { createProvider } from './vue-apollo'
 import UseAntd from './use-antd'
+import UseThemeModule from './use-theme-module'
 import MixinStore from './mixins/mixin-store'
 
 Vue.use(UseAntd)
+Vue.use(UseThemeModule)
 Vue.use(VueRx)
 
 Vue.mixin(MixinStore)

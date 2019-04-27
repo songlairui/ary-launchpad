@@ -6,7 +6,7 @@
     </h3>
     <div class="connect-line"></div>
     <div class="card">
-      <div class="item" v-for="item in links" @click="itemClick">
+      <div class="item" :key="item.icon" v-for="item in links" @click="itemClick">
         <span class="icon">
           <icon-font :type="item.icon || 'iconkongqizhiliang'"/>
         </span>

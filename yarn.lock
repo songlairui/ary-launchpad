@@ -9005,6 +9005,11 @@ vue-cli-plugin-rx@^0.1.5:
   resolved "https://registry.npm.taobao.org/vue-cli-plugin-rx/download/vue-cli-plugin-rx-0.1.5.tgz#259e3fb430047364e3f433411f0287d184d4d5fa"
   integrity sha1-JZ4/tDAEc2Tj9DNBHwKH0YTU1fo=
 
+vue-css-modules@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npm.taobao.org/vue-css-modules/download/vue-css-modules-1.2.0.tgz#04bddaac7cbe32cc3213f1977c9087ed82622803"
+  integrity sha1-BL3arHy+MswyE/GXfJCH7YJiKAM=
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.npm.taobao.org/vue-eslint-parser/download/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"

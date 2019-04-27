@@ -1,10 +1,11 @@
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapGetters, mapMutations } from 'vuex'
 import * as T from '../store-types'
 
 export default {
   computed: {
+    ...mapGetters(['aryTheme']),
     ...mapState({
-      aryTheme: (state) => state.theme
+      aryThemeVal: (state) => state.theme
     })
   },
   methods: {

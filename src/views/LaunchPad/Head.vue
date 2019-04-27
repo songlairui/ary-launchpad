@@ -14,7 +14,7 @@ export default {
   computed: {
     themeVal: {
       get() {
-        return this.aryTheme;
+        return this.aryThemeVal;
       },
       set(val) {
         this.setTheme(val);

@@ -1,5 +1,5 @@
 <template>
-  <div class="launch-pad flex-column" :class="themeClass">
+  <div class="launch-pad flex-column" :styleName="aryTheme">
     <PadHead/>
     <div class="main">
       <div class="side">
@@ -9,10 +9,9 @@
         <a name="card-top"></a>
         <h3>T·O·C</h3>
         <div class="toc">
-          <ChapterToc class="chapter" v-for="item in chapterTocs"/>
+          <ChapterToc class="chapter" v-for="item in chapterTocs" :key="item"/>
         </div>
         <div class="detail"></div>
-        <div class="blank"></div>
       </div>
     </div>
   </div>
@@ -37,13 +36,10 @@ export default {
       chapterTocs: [1, 2, 3, 4, 5]
     };
   },
-  computed: {
-    themeClass() {
-      return this.aryTheme ? this.$style.light : this.$style.dark;
-    }
-  },
   methods: {},
-  created() {}
+  created() {
+    console.info("L", this);
+  }
 };
 </script>
 <style lang="less" scoped>
@@ -72,18 +68,3 @@ export default {
   }
 }
 </style>
-
-<style lang="less" module>
-.light {
-  background: #bbc6d6;
-  color: #2e3f4c;
-}
-.dark {
-  background: #2e3f4c;
-  color: #bbc6d6;
-  * {
-    color: #bbc6d6;
-  }
-}
-</style>
-
