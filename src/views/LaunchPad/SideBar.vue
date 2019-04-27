@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "~@/assets/var.less";
+
 .side-bar {
   padding: 0 32px;
   .panel {
@@ -37,7 +39,7 @@ export default {
   }
 }
 .to-top {
-  background: #5d6aea;
+  background: @accent-color;
   text-align: center;
 }
 </style>

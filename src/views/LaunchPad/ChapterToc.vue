@@ -45,6 +45,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import "~@/assets/var.less";
+
 .chapter-toc {
   display: inline-block;
   min-width: 120px;
@@ -59,7 +61,7 @@ export default {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     .idx {
       transform: translate(-2px, -2px);
-      background: #5d6aea;
+      background: @accent-color;
       color: #fff;
       border-radius: 16px;
       width: 32px;
@@ -102,7 +104,7 @@ export default {
       border-radius: 5px;
 
       .icon {
-        color: #5d6aea;
+        color: @accent-color;
         padding-right: 8px;
       }
       .name {
