@@ -2,7 +2,12 @@
   <div class="pad-head">
     <h1>Launchpad for lary</h1>
     <div class="flex-holder"></div>
-    <a-icon type="ellipsis" :spin="spin" @click="snapTheme" class="auto-theme-toggle"/>
+    <a-tooltip placement="left">
+      <template slot="title">
+        <span>{{spin?"自动":"手动"}}</span>
+      </template>
+      <a-icon type="ellipsis" :spin="spin" @click="snapTheme" class="auto-theme-toggle"/>
+    </a-tooltip>
     <a-switch v-model="themeVal" :disabled="spin">
       <a-icon type="bulb" slot="checkedChildren"/>
       <a-icon type="fire" slot="unCheckedChildren"/>
@@ -37,7 +42,9 @@ export default {
         localStorage.removeItem("theme");
         this.initTheme();
       } else {
-        localStorage.setItem("theme", this.aryTheme);
+        // 切换时,换色意愿较大
+        this.themeVal = !this.themeVal;
+        // localStorage.setItem("theme", this.aryTheme);
       }
     }
   }

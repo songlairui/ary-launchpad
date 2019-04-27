@@ -1,4 +1,12 @@
-import { Switch, Button, Affix, Divider, Icon, message } from 'ant-design-vue'
+import {
+  message,
+  Switch,
+  Button,
+  Affix,
+  Divider,
+  Icon,
+  Tooltip
+} from 'ant-design-vue'
 import { ICON_FONT_URL } from './constant'
 
 export default {
@@ -6,7 +14,7 @@ export default {
     const IconFont = Icon.createFromIconfontCN({
       scriptUrl: ICON_FONT_URL
     })
-    const Insts = [Switch, Button, Affix, Divider, Icon]
+    const Insts = [Switch, Button, Affix, Divider, Icon, Tooltip]
     Insts.forEach((inst) => {
       Vue.use(inst)
     })
