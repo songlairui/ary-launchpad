@@ -9,7 +9,13 @@
         <a name="card-top"></a>
         <h3>T·O·C</h3>
         <div class="toc">
-          <ChapterToc class="chapter" v-for="item in chapterTocs" :key="item"/>
+          <ChapterToc
+            class="chapter"
+            v-for="(item, idx) in chapterTocs"
+            :key="idx"
+            :meta="item.meta"
+            :links="item.links"
+          />
         </div>
         <div class="detail"></div>
       </div>
@@ -30,10 +36,79 @@ export default {
     SideBar,
     ChapterToc
   },
+  // - 此刻我有什么事情没做好吗?
+  // - Within Day
+  //   - 吃饭, 迟, 1 day ~ 10h
+  //   - 洗衣服, 迟, 未取 ~ 4h
+  //   - 洗袜子, 迟, 未取 2h
   data() {
     return {
       bottom: 50,
-      chapterTocs: [1, 2, 3, 4, 5]
+      chapterTocs: [
+        {
+          meta: {
+            idx: "〇",
+            name: "此刻我有什么事情没做好吗?"
+          },
+          links: [{ name: "Within Day" }]
+        },
+        {
+          meta: {
+            idx: "I",
+            name: "Within Day"
+          },
+          links: [{ name: "吃饭" }, { name: "洗衣服" }, { name: "洗袜子" }]
+        },
+        {
+          meta: {
+            idx: "II",
+            name: "PROJECTS CREATING"
+          },
+          links: [
+            {
+              name: "Workspace-ui"
+            },
+            {
+              name: "Algorithm doc"
+            },
+            {
+              name: "Git Subtree"
+            },
+            {
+              name: "larry Gatsby"
+            }
+          ]
+        },
+        {
+          meta: {
+            idx: "III",
+            name: "FRAMEWORK EAGERRING"
+          },
+          links: [
+            {
+              name: "NestJs"
+            },
+            {
+              name: "Apollo"
+            },
+            {
+              name: "Prisma"
+            },
+            {
+              name: "Rxjs"
+            },
+            {
+              name: "Docker"
+            }
+          ]
+        },
+        {
+          meta: {
+            idx: "XX",
+            name: "BLANK"
+          }
+        }
+      ]
     };
   },
   methods: {},
