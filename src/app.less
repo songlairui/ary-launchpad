@@ -18,8 +18,30 @@ body,
     }
   }
 }
-// .body-affix {
-//   position: absolute;
-//   top: -100%;
-//   left: -100%;
-// }
+.body-affix {
+  height: 0;
+}
+
+.flex-holder {
+  flex: 1;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.blank {
+  height: 1000px;
+  border: thin solid yellowgreen;
+}
