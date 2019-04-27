@@ -2,6 +2,6 @@
 
 > based on @vue/cli3
 
-## Doc
+## TODO
 
-[./doc](./doc/README.md)
+- [ ] 换色,亮/暗

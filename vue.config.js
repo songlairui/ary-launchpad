@@ -6,5 +6,13 @@ module.exports = {
       enableMocks: false,
       enableEngine: false
     }
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        modifyVars: {},
+        javascriptEnabled: true
+      }
+    }
   }
 }
