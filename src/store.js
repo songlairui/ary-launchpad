@@ -1,31 +1,40 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import * as T from './store-types'
+import actions from './store/actions'
+import mutations from './store/mutations'
+import { initTheme } from './store/utils'
 
 Vue.use(Vuex)
 
-function initTheme() {
-  const cache = localStorage.getItem('theme')
-  if (cache) {
-    return cache !== 'dark'
-  }
-  return new Date().getHours() < 16
-}
-
 export default new Vuex.Store({
   state: {
-    theme: initTheme()
+    theme: initTheme(),
+    LaunchFirst: { modules: [], moduleBase: [] }
   },
   getters: {
-    aryTheme: (state) => (state.theme ? 'light' : 'dark')
-  },
-  mutations: {
-    [T.INIT_THEME](state) {
-      state.theme = initTheme()
-    },
-    [T.SET_THEME](state, payload) {
-      state.theme = !!payload
+    aryTheme: (state) => (state.theme ? 'light' : 'dark'),
+    getItemsViaModule: (state) => (moduleId) => {
+      const rootPool = state.LaunchFirst
+      const basePool = state.LaunchFirst.moduleBase || []
+
+      const { redirects, items } = basePool.reduce(
+        (result, item) => {
+          const { belong, redirect } = item
+          if (belong === moduleId) {
+            if (redirect) {
+              result.redirects[redirect] = rootPool[redirect]
+            } else {
+              result.items.push(item)
+            }
+          }
+          return result
+        },
+        { redirects: {}, items: [] }
+      )
+
+      return { redirects, items }
     }
   },
-  actions: {}
+  mutations,
+  actions
 })

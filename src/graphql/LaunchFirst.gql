@@ -1,0 +1,18 @@
+query LaunchFirst {
+  modules {
+    id
+    selfQuestion
+    type
+    title
+  }
+  moduleBase: moduleItems(belong: "") {
+    name
+    belong
+  }
+  moduleCreatings {
+    folder
+    repo
+    desc
+    skills
+  }
+}

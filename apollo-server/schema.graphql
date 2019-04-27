@@ -31,6 +31,36 @@ type File {
   encoding: String!
 }
 
+enum ModuleTypes {
+  moduleCreating
+  moduleProgressMe
+}
+
+type Module {
+  id: ID!
+  type: String
+  title: String
+  selfQuestion: String
+}
+
+type ModuleItems {
+  name: String
+  valType: String
+  belong: ID!
+  redirect: ModuleTypes
+}
+
+type ModuleCreating {
+  folder: String
+  repo: String
+  desc: String
+  skills: [String]
+}
+type ModuleProgressMe {
+  type: String
+  name: String
+  keys: [String]
+}
 
 type Query {
   # Test query with a parameter
@@ -38,16 +68,18 @@ type Query {
   # List of messages sent by users
   messages: [Message]
   uploads: [File]
-
+  modules: [Module]
+  moduleItems(belong: ID!): [ModuleItems]
+  moduleCreatings: [ModuleCreating]
+  moduleProgressMes: [ModuleProgressMe]
 }
 
 type Mutation {
   myMutation: String!
   # Add a message and publish it on 'messages' subscription channel
-  addMessage (input: MessageInput!): Message!
-  singleUpload (file: Upload!): File!
-  multipleUpload (files: [Upload!]!): [File!]!
-
+  addMessage(input: MessageInput!): Message!
+  singleUpload(file: Upload!): File!
+  multipleUpload(files: [Upload!]!): [File!]!
 }
 
 type Subscription {
@@ -56,5 +88,4 @@ type Subscription {
   counter: Counter!
   # When a new message is added
   messageAdded: Message!
-
 }

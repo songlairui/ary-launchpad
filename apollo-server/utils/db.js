@@ -17,16 +17,17 @@ db.defaults({
     {
       id: 1,
       type: 'base',
-      name: 'Within Day'
+      title: 'Within Day'
     },
     {
       id: 2,
       type: 'common',
-      name: ''
+      title: ''
     },
     {
       id: 3,
       type: 'worse',
+      title: '事情延误状态',
       selfQuestion: '此刻我有什么事情没做好吗?'
     },
     {

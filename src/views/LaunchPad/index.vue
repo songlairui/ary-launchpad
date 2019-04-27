@@ -11,8 +11,15 @@
         <div class="toc">
           <ChapterToc
             class="chapter"
-            v-for="(item, idx) in chapterTocs"
+            v-for="(module, idx) in modules"
             :key="idx"
+            :meta="{idx, ...module}"
+            :links="flatItems(module.id)"
+          />
+          <ChapterToc
+            class="chapter"
+            v-for="(item, idx) in chapterTocs"
+            :key="`fake-${idx}`"
             :meta="item.meta"
             :links="item.links"
           />
@@ -44,6 +51,7 @@ export default {
   data() {
     return {
       bottom: 50,
+      dashboard: [],
       chapterTocs: [
         {
           meta: {
@@ -111,8 +119,17 @@ export default {
       ]
     };
   },
-  methods: {},
-  created() {}
+  methods: {
+    flatItems(moduleId) {
+      const { redirects, items } = this.getItemsViaModule(moduleId);
+      return Object.values(redirects).reduce((all, arr) => all.concat(arr), [
+        ...items
+      ]);
+    }
+  },
+  created() {
+    this.getLaunchFirst();
+  }
 };
 </script>
 <style lang="less" scoped>
