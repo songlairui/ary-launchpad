@@ -1,9 +1,11 @@
 <template>
   <div class="chapter-toc">
-    <h3 class="meta" :styleName="`${aryTheme}-meta`">
-      <span class="idx center">{{meta.idx}}</span>
-      <span class="name center">{{meta.name}}</span>
-    </h3>
+    <div class="header">
+      <h3 class="meta" :styleName="`${aryTheme}-meta`">
+        <span class="idx center">{{meta.idx}}</span>
+        <span class="name center">{{meta.name}}</span>
+      </h3>
+    </div>
     <div class="connect-line"></div>
     <div class="card" :styleName="`${aryTheme}-card`">
       <div class="item" :key="item.icon" v-for="item in links" @click="itemClick">
@@ -48,7 +50,8 @@ export default {
 @import "~@/assets/var.less";
 
 .chapter-toc {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   min-width: 120px;
   padding: 5px 20px 20px;
   .meta {
@@ -83,6 +86,7 @@ export default {
     margin-left: 13px;
   }
   .card {
+    flex: 1;
     min-height: 50px;
     border-radius: 10px;
     padding: 12px 16px;
@@ -91,12 +95,13 @@ export default {
     border: 0 solid #bbc6d6;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     .item {
       display: inline-flex;
       padding: 5px;
       margin: 8px 0;
       align-items: center;
-      flex: 1 0 40%;
+      flex: 0 0 50%;
       cursor: pointer;
       transition: background 0.2s;
       border-radius: 5px;

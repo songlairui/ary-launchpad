@@ -133,7 +133,7 @@ export default {
         display: flex;
         flex-wrap: wrap;
         .chapter {
-          flex: 0 0 45%;
+          flex: 0 0 360px;
         }
       }
     }
