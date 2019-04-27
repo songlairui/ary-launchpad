@@ -27,7 +27,7 @@ export default new Router({
       path: '/launch-pad',
       name: 'launchpad',
       component: () =>
-        import(/* webpackChunkName: "launchpad" */ './views/LaunchPad.jsx')
+        import(/* webpackChunkName: "launchpad" */ './views/LaunchPad.vue')
     }
   ]
 })
