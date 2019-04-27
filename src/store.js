@@ -7,7 +7,7 @@ Vue.use(Vuex)
 function initTheme() {
   const cache = localStorage.getItem('theme')
   if (cache) {
-    return cache !== 'dark' ? 'light' : 'dark'
+    return cache !== 'dark'
   }
   return new Date().getHours() < 16
 }
@@ -20,6 +20,9 @@ export default new Vuex.Store({
     aryTheme: (state) => (state.theme ? 'light' : 'dark')
   },
   mutations: {
+    [T.INIT_THEME](state) {
+      state.theme = initTheme()
+    },
     [T.SET_THEME](state, payload) {
       state.theme = !!payload
     }

@@ -10,7 +10,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setTheme: T.SET_THEME
+      setTheme: T.SET_THEME,
+      initTheme: T.INIT_THEME
     })
   }
 }
