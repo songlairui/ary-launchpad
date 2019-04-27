@@ -37,15 +37,12 @@ export default {
     };
   },
   methods: {},
-  created() {
-    console.info("L", this);
-  }
+  created() {}
 };
 </script>
 <style lang="less" scoped>
 .launch-pad {
   height: 100%;
-  transition: background 0.3s;
   .main {
     flex: 1;
     display: flex;

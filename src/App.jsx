@@ -16,6 +16,11 @@ export default {
           <Dropdown trigger={['click']}>
             <Menu slot="overlay">
               <Menu.Item>
+                <a target="rxjs" href="https://reactive.how/rxjs/">
+                  模仿目标
+                </a>
+              </Menu.Item>
+              <Menu.Item>
                 <router-link to="/vue-cli-home">Home</router-link>
               </Menu.Item>
               <Menu.Item>

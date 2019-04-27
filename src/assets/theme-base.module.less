@@ -1,11 +1,25 @@
+@import './var.less';
+
 .light {
-  background: #bbc6d6;
-  color: #2e3f4c;
+  background: @bg-color;
+  color: @fore-color;
+  &-meta {
+    background-color: @bg-color-meta;
+  }
+  &-card {
+    background-color: @bg-color-card;
+  }
 }
 .dark {
-  background: #2e3f4c;
-  color: #bbc6d6;
+  background: @bg-color-dark;
+  color: @fore-color-dark;
   * {
-    color: #bbc6d6;
+    color: @fore-color-dark;
+  }
+  &-meta {
+    background-color: @bg-color-meta-dark;
+  }
+  &-card {
+    background-color: @bg-color-card-dark;
   }
 }

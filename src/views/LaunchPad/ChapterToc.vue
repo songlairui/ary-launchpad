@@ -1,11 +1,11 @@
 <template>
   <div class="chapter-toc">
-    <h3 class="meta">
+    <h3 class="meta" :styleName="`${aryTheme}-meta`">
       <span class="idx center">{{meta.idx}}</span>
       <span class="name center">{{meta.name}}</span>
     </h3>
     <div class="connect-line"></div>
-    <div class="card">
+    <div class="card" :styleName="`${aryTheme}-card`">
       <div class="item" :key="item.icon" v-for="item in links" @click="itemClick">
         <span class="icon">
           <icon-font :type="item.icon || 'iconkongqizhiliang'"/>
@@ -57,7 +57,6 @@ export default {
     display: inline-flex;
     height: 29px;
     border-radius: 16px;
-    background: #f4f5ff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     .idx {
       transform: translate(-2px, -2px);
@@ -85,7 +84,6 @@ export default {
   }
   .card {
     min-height: 50px;
-    background-color: #fff;
     border-radius: 10px;
     padding: 12px 16px;
     box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.09),
